@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.jobsglitch/jobs",
+  "title": "JobsGlitch",
+  "description": "Search over a million live jobs taken straight from employers' own hiring systems.",
+  "version": "1.1.0",
+  "websiteUrl": "https://jobsglitch.com/developer?utm_source=mcp-registry&utm_medium=directory&utm_campaign=mcp-listing",
+  "repository": {
+    "url": "https://github.com/Jobsglitch/jobsglitch-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://jobsglitch.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional. Bearer followed by your free API key from https://jobsglitch.com/developer, for no daily cap and 50 jobs a call",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    },
+    {
+      "type": "sse",
+      "url": "https://jobsglitch.com/mcp/sse",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional. Bearer followed by your free API key from https://jobsglitch.com/developer",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
